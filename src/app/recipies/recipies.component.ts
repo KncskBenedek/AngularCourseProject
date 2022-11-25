@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipies',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipies.component.css']
 })
 export class RecipiesComponent {
-
+  toDetRec: Recipe;
+  onGetNewItem(event: Recipe){
+    this.toDetRec = event;
+  }
 }
