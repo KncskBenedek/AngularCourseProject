@@ -17,4 +17,14 @@ export class ShoppingListService{
       getIngredients(){
         return this.ingredients.slice();
       }
+
+      toShoppingListIngredients(ingredients: Ingredient[]){
+        /* ingredients.forEach(newIng => {
+            this.newIngredient(newIng);
+        }); */
+
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+      }
+
 }
