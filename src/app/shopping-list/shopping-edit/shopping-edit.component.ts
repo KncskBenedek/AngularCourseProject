@@ -19,7 +19,7 @@ export class ShoppingEditComponent {
     //console.log(newIngredient);
     
     //this.editOut.emit(newIngredient);
-    this.slService.newIngrdient(newIngredient);
+    this.slService.newIngredient(newIngredient);
     
   }
 }

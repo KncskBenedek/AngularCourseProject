@@ -9,7 +9,7 @@ export class ShoppingListService{
       ingredientsChanged = new EventEmitter<Ingredient[]>();
       
       
-      newIngrdient(ingredient: Ingredient){
+      newIngredient(ingredient: Ingredient){
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
       }
