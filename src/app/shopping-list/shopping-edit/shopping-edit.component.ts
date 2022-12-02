@@ -16,7 +16,7 @@ export class ShoppingEditComponent {
   }
   myFunction(){
     const newIngredient: Ingredient = new Ingredient(this.ingredientInput.nativeElement.value, this.amountInput.nativeElement.value);
-    //console.log(newIngredient);
+
     
     //this.editOut.emit(newIngredient);
     this.slService.newIngredient(newIngredient);

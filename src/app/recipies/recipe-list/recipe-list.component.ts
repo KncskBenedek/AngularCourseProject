@@ -9,7 +9,7 @@ import { RecipeService } from '../recipe.service';
 
 })
 export class RecipeListComponent {
-  @Input() itemKattintva: Recipe;
+  //@Input() itemKattintva: Recipe;
   recipies: Recipe[] = [];
 
   constructor(private recipeService: RecipeService){
