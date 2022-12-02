@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { DropdownDirecitve } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.component';
 
 
 
@@ -26,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirecitve
+    DropdownDirecitve,
+    RecipeEditComponent
 
   ],
   imports: [
