@@ -35,4 +35,12 @@ export class RecipeService {
     });
     return recipe;
   }
+
+  addRecipe(recipe: Recipe){
+    this.recipies.push(recipe);
+  }
+
+  updateRecipe(index: number, recipe: Recipe){
+    this.recipies[index] = recipe;
+  }
 }

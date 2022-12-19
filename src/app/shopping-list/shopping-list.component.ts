@@ -17,6 +17,8 @@ private igChanngeSub: Subscription;
     this.ingredients = this.slService.getIngredients();
    this.igChanngeSub = this.slService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => {
       this.ingredients = ingredients;
+      
+      
     });
   }
 
@@ -24,8 +26,11 @@ private igChanngeSub: Subscription;
   ngOnDestroy(): void {
     this.igChanngeSub.unsubscribe();
   }
-  /* onNewIngredient(event: Ingredient) {
-    this.slService.newIngrdient(event);
-    this.ingredients = this.slService.getIngredients();
-  } */
+
+
+  onEditItem(index: number){
+    this.slService.startedEditing.next(index);
+  }
+
+
 }
