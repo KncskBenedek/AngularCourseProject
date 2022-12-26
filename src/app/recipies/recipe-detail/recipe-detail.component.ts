@@ -13,15 +13,18 @@ import { RecipeService } from '../recipe.service';
 export class RecipeDetailComponent implements OnInit {
   //@Input() 
   receptDet: Recipe;
-  constructor(private slService: ShoppingListService, private route: ActivatedRoute, private recipeService: RecipeService) {}
+  id: number;
+  constructor(private slService: ShoppingListService, private route: ActivatedRoute, private recipeService: RecipeService) {
+    this.id = +this.route.snapshot.params['id'];
+  }
 
   toSL(ingredients: Ingredient[]) {
     this.slService.toShoppingListIngredients(ingredients);
   }
 
   ngOnInit(){
-    const id = +this.route.snapshot.params['id'];
-    this.receptDet = this.recipeService.getRecipe(id);
+    
+    this.receptDet = this.recipeService.getRecipe(this.id);
 
     
     this.route.params.subscribe(
@@ -31,6 +34,10 @@ export class RecipeDetailComponent implements OnInit {
 
       }
     );
+  }
+
+  delRec(){
+    this.recipeService.deleteRecipe(this.id);
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -8,15 +9,22 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-list.component.css'],
 
 })
-export class RecipeListComponent {
+export class RecipeListComponent implements OnDestroy{
   //@Input() itemKattintva: Recipe;
   recipies: Recipe[] = [];
-
+  subRecChanged: Subscription;
   constructor(private recipeService: RecipeService){
 
   }
   ngOnInit(){
     this.recipies = this.recipeService.getRecipies();
+    this.subRecChanged  = this.recipeService.recepiesChanged.subscribe(
+      (recipies: Recipe[])=>{
+        this.recipies = recipies;
+      }
+    );
   }
-
+  ngOnDestroy(): void {
+    this.subRecChanged.unsubscribe()
+  }
 }

@@ -14,6 +14,7 @@ import { DropdownDirecitve } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipies/recipe.service';
 
 
 
@@ -37,7 +38,7 @@ import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.componen
     ReactiveFormsModule,
     AppRoutingModule,
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
